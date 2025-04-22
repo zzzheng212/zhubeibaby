@@ -1,0 +1,56 @@
+<aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="changeMap('https://www.google.com/maps/d/embed?mid=1nq-9vYHV2Y-xV9MesGgF9BOY50Y&hl=en_US&ehbc=2E312F')">餐廳</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="changeMap('https://www.google.com/maps/d/embed?mid=1nq-9vYHV2Y-xV9MesGgF9BOY50Y&hl=en_US&ehbc=2E312F')">交通</a>
+      </li>
+    </ul>
+    
+    <script>
+    function changeMap(newMapUrl) {
+      document.getElementById('mapIframe').src = newMapUrl;
+    }
+    </script>
+    
+    
+    <ul class="sidebar-nav" id="sidebar-nav">  
+      <li class="nav-item">
+            <a class="nav-link" href="Main Page.html">
+                <i class="bi bi-grid"></i><span>餐廳</span>
+                <span></span>
+            </a>
+        </li>
+        <ul id="products-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="seller_my_product.php">
+              <i class="bi bi-circle"></i><span>餐廳1</span>
+            </a>
+          </li>
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#products-nav" data-bs-toggle="collapse" href="Main Page.html">
+            <i class="bi bi-basket"></i><span>交通</span>
+            <span></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#products-nav" data-bs-toggle="collapse" href="Main Page.html">
+            <i class="bi bi-basket"></i><span>用品</span>
+            <span></span>
+          </a>
+        </li>
+        <!-- End Components Nav -->
+    </ul>
+</aside>
+<!-- End Sidebar-->
+
+
+  <main id="main" class="main">    
+    <div class="pagetitle">
+      <h1>Google Map 互動地圖</h1>
+      <!-- Google Map iframe -->
+    <iframe id="mapIframe" src="https://www.google.com/maps/d/embed?mid=1RyoX-LMHqah_hpNe-3OqQWGi60NJUvc&ehbc=2E312F" width="640" height="480"></iframe>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjpj-12ah3GvLx6TZ9TdaOxJkCp_aWkLE&callback=initMap" async defer></script>
+    <div id="map" style="height: 500px; width: 100%;"></div>
