@@ -22,12 +22,8 @@ function initMap() {
         {
             id: 'restaurant3',
             title: '涮乃葉',
-            subLocations: [
-                { lat: 25.037115574562485, lng: 121.56812486654995, title: '信義遠百店' },
-                { lat: 23.079810705074472, lng: 120.24166082360118, title: '台南遠百成功店' }
-            ]
-        },
-        { id: 'restaurant4', coords: { lat: 25.052124092335085, lng: 121.5479585399683 }, title: '橫浜牛排 微風南京店' },
+        }
+
     ];
 
     var markers = {};
