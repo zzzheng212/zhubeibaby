@@ -21,7 +21,10 @@ function initMap() {
         },
         {
             id: 'restaurant3',
-            title: '涮乃葉',
+            title: ' 冒險小丘遊戲場(兒6)',
+            subLocations: [
+                { lat: 24.806466777904394, lng: 121.03280724232837, title: '' },
+            ]
         }
 
     ];
@@ -231,6 +234,50 @@ function updateInfoContainer(locationId) {
             <p>許嘉雲便便！</p>
         </details>
       `;
+    }
+    else if (locationId === 'restaurant3') {
+        content = `
+        <h1>冒險小丘遊戲場(兒6)</h1>
+        <p>302新竹縣竹北市六家五路二段51號</p>
+        <details class="info-box toilet">
+            <summary>🚻 廁所與育兒設施</summary>
+            <ul>
+                <li>親子廁所：無</li>
+                <li>尿布台：男廁、女廁、無障礙皆無</li>
+                <li>兒童用洗手台：無</li>
+                <li>固定與兒童座椅：無</li>
+                <li>衛生紙提供：無</li>
+                <li>哺乳室：無</li>
+            </ul>
+        </details>
+        <details class="info-box playground">
+            <summary>🎠 遊樂設施</summary>
+            <ul>
+                <li>適用年齡:3~12 歲</li>
+                <li>地墊材質:人工草皮</li>
+            </ul>
+        </details>
+        <details class="info-box nearby">
+        <summary>🅿️ 周邊設施</summary>
+            <ul>
+                <li>停車場：有</li>
+                <li>無障礙坡道：有</li>
+                <li>急救設施:AED 等設備</li>
+                <li>飲水機：有設置</li>
+                <li>垃圾桶分類：無</li>
+                <li>便利資源：附近有超商/li>
+            </ul>
+        </details>
+
+        <details class="info-box review">
+        <summary>📢 家長評論</summary>
+            <ul>
+                <li>有流動廁所~</li>
+                <li>路邊停車格不多</li>
+            </ul>
+        </details>
+        `;
+
     }
     infoContainer.innerHTML = content;
 }
