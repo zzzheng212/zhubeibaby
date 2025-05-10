@@ -6,21 +6,21 @@ function initMap() {
 
     var locations = [
         {
-            id: 'restaurant1',
+            id: 'park1',
             title: '兒11親子公園(音符公園)',
             subLocations: [
                 { lat: 24.80141248522343, lng: 121.04249438188499, title: '' }
             ]
         },
         {
-            id: 'restaurant2',
+            id: 'park2',
             title: '魔王城堡公園(公7)',
             subLocations: [
                 { lat: 24.806052978554614, lng: 121.03166560185085, title: '' },
             ]
         },
         {
-            id: 'restaurant3',
+            id: 'park3',
             title: ' 冒險小丘遊戲場(兒6)',
             subLocations: [
                 { lat: 24.806466777904394, lng: 121.03280724232837, title: '' },
@@ -81,9 +81,13 @@ function initMap() {
         }
 
         // Listen for clicks on the menu items
-        document.getElementById(location.id).addEventListener('click', function () {
-            showMarkers(location.id);
-            updateInfoContainer(location.id);
+        document.querySelectorAll('.park-item').forEach(function (el) {
+            el.addEventListener('click', function (e) {
+                e.preventDefault();
+                const locationId = this.dataset.park;  // 抓 data-park 的值
+                showMarkers(locationId);
+                updateInfoContainer(locationId);
+            });
         });
     });
 
@@ -151,7 +155,7 @@ function updateInfoContainer(locationId) {
     const infoContainer = document.getElementById('info-container');
     let content = '';
 
-    if (locationId === 'restaurant1') {
+    if (locationId === 'park1') {
         content = `
         <h1>兒11親子公園(音符公園)</h1>
         <p>302新竹縣竹北市隘口三街239號</p>
@@ -195,7 +199,7 @@ function updateInfoContainer(locationId) {
         
         `;
     }
-    else if (locationId === 'restaurant2') {
+    else if (locationId === 'park2') {
         content = `
         <h1>魔王城堡公園(公7)</h1>
         <p>302新竹縣竹北市隘口三街239號</p>
@@ -235,7 +239,7 @@ function updateInfoContainer(locationId) {
         </details>
       `;
     }
-    else if (locationId === 'restaurant3') {
+    else if (locationId === 'park3') {
         content = `
         <h1>冒險小丘遊戲場(兒6)</h1>
         <p>302新竹縣竹北市六家五路二段51號</p>
@@ -265,7 +269,7 @@ function updateInfoContainer(locationId) {
                 <li>急救設施:AED 等設備</li>
                 <li>飲水機：有設置</li>
                 <li>垃圾桶分類：無</li>
-                <li>便利資源：附近有超商/li>
+                <li>便利資源：附近有超商</li>
             </ul>
         </details>
 
@@ -283,7 +287,7 @@ function updateInfoContainer(locationId) {
 }
 /*關閉sidebar */
 document.addEventListener("DOMContentLoaded", function () {
-    var sidebarCollapse = new bootstrap.Collapse(document.getElementById('restaurant-nav'), {
+    var sidebarCollapse = new bootstrap.Collapse(document.getElementById('park-nav'), {
         toggle: false
     });
     sidebarCollapse.hide();
@@ -313,5 +317,7 @@ document.addEventListener("DOMContentLoaded", function () {
         main.classList.toggle('shrink');
     });
 });
+
+
 
 

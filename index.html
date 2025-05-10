@@ -5,13 +5,6 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <!-- SEO 基本資訊 -->
-  <title>竹北育兒友善地圖</title>
-  <meta name="description" content="探索新竹竹北地區的育兒友善設施，包括親子公園、尿布台、哺乳室與飲水機，提供給新手爸媽最實用的地圖資訊。">
-  <meta name="keywords" content="竹北, 育兒, 親子, 友善地圖, 公園, 哺乳室, 尿布台, 飲水機">
-  <meta name="author" content="zzzheng212">
-
-  
   <title>竹北育兒友善地圖</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -27,9 +20,12 @@
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="dash_style.css" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
 
   <!-- Google Map CSS -->
   <style>
@@ -64,53 +60,83 @@
       padding: 20px 0;
       width: 100%;
     }
+
+    @media (max-width: 768px) {
+      #sidebar {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <header id="header" class="header fixed-top d-flex align-items-center">
+  <!-- 電腦版 Header -->
+  <header id="header" class="header fixed-top d-none d-md-flex align-items-center">
     <div class="d-flex align-items-center justify-content-between">
-      <a href="MainPage.html" class="logo d-flex align-items-center">
-        <!-- /* 這是圖片 */ -->
+      <a href="index.html" class="logo d-flex align-items-center">
         <!-- <img src="assets/img/NCULogo.svg" alt=""> -->
         <span class="d-none d-lg-block">竹北育兒友善地圖</span>
       </a>
-      <i class="bi bi-list toggle-sidebar-btn" style="font-size: 24px; cursor: pointer;"></i>
+      <i class="bi bi-list toggle-sidebar-btn d-none d-md-block" style="font-size: 24px; cursor: pointer;"></i>
     </div>
   </header>
-  <!-- End Header -->
+  <!-- End 電腦版 Header -->
+
+  <header
+    class="d-flex d-md-none align-items-center justify-content-between px-3 py-2 bg-white shadow-sm">
+    <!-- 標題靠左 -->
+    <span class="fw-bold mb-0">竹北育兒友善地圖</span>
+    <!-- 漢堡按鈕靠右 -->
+    <button class="btn p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <i class="bi bi-list fs-4"></i>
+    </button>
+  </header>
+
+  <!-- 手機版 Navbar Menu -->
+  <nav class="navbar navbar-expand-md bg-white d-md-none px-3 py-2 border-bottom">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse mt-2" id="navbarCollapse">
+        <ul class="navbar-nav flex-column w-100">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">🏠 主頁</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link dropdown-toggle" href="#" id="parkMenu" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              🌳 公園
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="parkMenu">
+              <a href="#" class="park-item" data-park="park1">兒11親子公園</a>
+              <a href="#" class="park-item" data-park="park2">魔王城堡公園</a>
+              <a href="#" class="park-item" data-park="park3">冒險小丘遊戲場</a>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End 手機版 Navbar -->
 
   <!-- Sidebar -->
-  <aside id="sidebar" class="sidebar collapsed">
+  <aside id="sidebar" class="sidebar collapsed d-none d-md-block border-end p-3">
     <ul class="sidebar-nav" id="sidebar-nav">
-
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
-          <i class="bi bi-grid"></i><span>主頁</span>
-        </a>
+        <a class="nav-link collapsed" href="index.html"><i class="bi bi-grid"></i><span>主頁</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#restaurant-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#park-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-egg-fried"></i><span>公園</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="restaurant-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-          <li>
-            <a id="restaurant1" href="#">
-              <i class="bi bi-bookmark"></i><span>兒11親子公園(音符公園)</span>
-            </a>
-            <a id="restaurant2" href="#">
-              <i class="bi bi-bookmark"></i><span>魔王城堡公園(公7)</span>
-            </a>
-            <a id="restaurant3" href="#">
-              <i class="bi bi-bookmark"></i><span>冒險小丘遊戲場(兒6)</span>
-            </a>
+        <ul id="park-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <a href="#" class="park-item" data-park="park1">兒11親子公園</a>
+          <a href="#" class="park-item" data-park="park2">魔王城堡公園</a>
+          <a href="#" class="park-item" data-park="park3">冒險小丘遊戲場</a>
         </ul>
       </li>
-      <!-- End Components Nav -->
-
     </ul>
   </aside>
   <!-- End Sidebar-->
+
 
   <!-- Main page -->
   <main id="main" class="main">
@@ -142,7 +168,6 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> <!-- 很重要不能刪>< -->
 
   <!-- Custom JS File -->
   <script src="main.js"></script>
@@ -152,6 +177,8 @@
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEonZKKChKAfrJ5bQ_hyuY96ALtx-hRgE&callback=initMap&libraries=&v=weekly"
     async defer></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

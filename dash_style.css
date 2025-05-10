@@ -142,20 +142,6 @@ h6 {
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
-  .pagetitle {
-    flex-direction: column;
-  }
-
-  /* 可選：讓 sidebar 寬度全滿，避免過小 */
-  #sidebar {
-    width: 100%;
-  }
-
-  #main {
-    width: 100%;
-  }
-}
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -506,6 +492,8 @@ h6 {
   padding: 0 20px;
 }
 
+
+
 @media (max-width: 1199px) {
   .header .search-bar {
     position: fixed;
@@ -701,6 +689,23 @@ h6 {
   background-color: #f6f9ff;
 }
 
+/* 統一 dropdown 公園項目的樣式 */
+.park-item {
+  display: block;
+  padding: 10px 15px;
+  color: #212529;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* 滑鼠 hover 效果 */
+.park-item:hover {
+  background-color: #f8f9fa;
+  color: #0d6efd;
+}
+
+
+
 /*--------------------------------------------------------------
 # Sidebar
 --------------------------------------------------------------*/
@@ -863,6 +868,8 @@ h6 {
 .sidebar-nav .nav-content a.active i {
   background-color: #4154f1;
 }
+
+
 
 
 /*--------------------------------------------------------------
@@ -1349,4 +1356,17 @@ h6 {
   text-align: center;
   font-size: 13px;
   color: #012970;
+}
+
+
+@media (max-width: 768px) {
+  /* 手機 header 裡的標題 */
+  header.d-md-none span.fw-bold.mb-0 {
+    font-family: "Nunito", sans-serif !important;
+    font-size: 26px !important;
+    font-weight: 800 !important;
+    color: #012970 !important;
+    margin-bottom: 20px !important;
+    /* 如果想要置中再加：text-align: center !important; */
+  }
 }
