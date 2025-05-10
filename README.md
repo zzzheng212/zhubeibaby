@@ -1,2 +1,2 @@
 # chubeibaby
-https://www.chubeibaby.com
+https://chubeibaby.com
