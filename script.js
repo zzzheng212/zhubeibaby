@@ -545,7 +545,7 @@ function updateInfoContainer(locationId) {
         <details class="info-box review">
         <summary>📢 家長評論</summary>
             <ul>
-                <li>路邊停車格數量中等></li>
+                <li>路邊停車格數量中等</li>
                 <li>女廁及親子廁所皆有尿布台</li>
             </ul>
         </details>
