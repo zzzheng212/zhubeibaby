@@ -75,6 +75,56 @@ function initMap() {
                 { lat: 24.837791096810744, lng: 121.0150461808408, title: '' }
             ]
         },
+        {
+            id: 'park11',
+            title: '竹仁公園',
+            subLocations: [
+                { lat: 24.836649370771877, lng: 121.01571300063392, title: '' }
+            ]
+        },
+        {
+            id: 'park12',
+            title: 'AI智慧公園',
+            subLocations: [
+                { lat: 24.832225460319567, lng: 121.0219967239152, title: '' }
+            ]
+        },
+        {
+            id: 'park13',
+            title: '縣福園公園',
+            subLocations: [
+                { lat: 24.825293242918445, lng: 121.01523167734584, title: '' }
+            ]
+        },
+        {
+            id: 'park14',
+            title: '福興公園',
+            subLocations: [
+                { lat: 24.82353890668419, lng: 121.01001223925466, title: '' }
+            ]
+        },
+        {
+            id: 'park15',
+            title: '公29公園',
+            subLocations: [
+                { lat: 24.827258471353936, lng: 121.00082416994287, title: '' }
+            ]
+        },
+        {
+            id: 'park16',
+            title: '新崙公園',
+            subLocations: [
+                { lat: 24.83429675052449, lng: 121.00014673872326, title: '' }
+            ]
+        },
+        {
+            id: 'park17',
+            title: '兒八公園',
+            subLocations: [
+                { lat: 24.861316214519018, lng: 121.00202566793979, title: '' }
+            ]
+        },
+
         
 
     ];
@@ -545,7 +595,7 @@ function updateInfoContainer(locationId) {
         <details class="info-box review">
         <summary>📢 家長評論</summary>
             <ul>
-                <li>路邊停車格數量中等</li>
+                <li>路邊停車格數量中等></li>
                 <li>女廁及親子廁所皆有尿布台</li>
             </ul>
         </details>
@@ -633,6 +683,313 @@ function updateInfoContainer(locationId) {
         <summary>📢 家長評論</summary>
             <ul>
                 <li>公園內較多年長者</li>
+            </ul>
+        </details>
+        `;
+    }
+    else if (locationId === 'park11') {
+        content = `
+        <h1>竹仁公園</h1>
+        <p>302新竹縣竹北市文化街</p>
+        <details class="info-box toilet">
+            <summary>🚻 廁所與育兒設施</summary>
+            <ul>
+                <li>廁所：✅</li>
+                <li>兒童迷你馬桶：❌</li>
+                <li>固定嬰兒座椅：❌</li>
+                <li>尿布台：❌ </li>
+                <li>衛生紙：❌</li>
+                <li>衛生紙販賣機：❌</li>
+                <li>哺乳室：❌</li>
+            </ul>
+        </details>
+        <details class="info-box playground">
+            <summary>🎠 遊樂設施</summary>
+            <ul>
+                <li>適用年齡:❌</li>
+                <li>地墊材質:❌</li>
+            </ul>
+        </details>
+        <details class="info-box nearby">
+        <summary>🅿️ 周邊設施</summary>
+            <ul>
+                <li>停車場：✅</li>
+                <li>路邊停車格： ❌</li>
+                <li>無障礙坡道： ✅</li>
+                <li>公園垃圾桶： ❌</li>
+                <li>家長等候區： ✅</li>
+                <li>便利資源：  7-11/全家/萊爾富</li>
+            </ul>
+        </details>
+
+        <details class="info-box review">
+        <summary>📢 家長評論</summary>
+            <ul>
+                <li>沒有遊樂設施但有操場</li>
+                <li>有專用停車場，車位蠻多</li>
+            </ul>
+        </details>
+        `;
+    }
+    else if (locationId === 'park12') {
+        content = `
+        <h1>AI智慧公園</h1>
+        <p>302新竹縣竹北市智慧二路1號</p>
+        <details class="info-box toilet">
+            <summary>🚻 廁所與育兒設施</summary>
+            <ul>
+                <li>廁所：✅</li>
+                <li>兒童迷你馬桶：✅</li>
+                <li>固定嬰兒座椅：✅</li>
+                <li>尿布台：✅ </li>
+                <li>衛生紙：❌</li>
+                <li>衛生紙販賣機：❌</li>
+                <li>哺乳室：❌</li>
+            </ul>
+        </details>
+        <details class="info-box playground">
+            <summary>🎠 遊樂設施</summary>
+            <ul>
+                <li>適用年齡:全年齡適用</li>
+                <li>地墊材質:單體鋪面: 澆注式橡膠地墊
+                            鬆填式鋪面: 砂 
+                            鬆填式鋪面: 礫石 </li>
+            </ul>
+        </details>
+        <details class="info-box nearby">
+        <summary>🅿️ 周邊設施</summary>
+            <ul>
+                <li>停車場：❌</li>
+                <li>路邊停車格： ✅</li>
+                <li>無障礙坡道： ✅</li>
+                <li>公園垃圾桶： ❌</li>
+                <li>家長等候區： ✅</li>
+                <li>便利資源： ❌</li>
+            </ul>
+        </details>
+
+        <details class="info-box review">
+        <summary>📢 家長評論</summary>
+            <ul>
+                <li>有廁所但有點遠ㄟ!! 要到智慧二路路邊QQ</li>
+                <li>尿布台在親子廁所(但圖示竟然是母女？!)</li>
+            </ul>
+        </details>
+        `;
+    }
+    else if (locationId === 'park13') {
+        content = `
+        <h1>縣福園公園</h1>
+        <p>302新竹縣竹北市光明六路</p>
+        <details class="info-box toilet">
+            <summary>🚻 廁所與育兒設施</summary>
+            <ul>
+                <li>廁所：✅</li>
+                <li>兒童迷你馬桶：❌</li>
+                <li>固定嬰兒座椅：❌</li>
+                <li>尿布台：❌ </li>
+                <li>衛生紙：❌</li>
+                <li>衛生紙販賣機：✅</li>
+                <li>哺乳室：❌</li>
+            </ul>
+        </details>
+        <details class="info-box playground">
+            <summary>🎠 遊樂設施</summary>
+            <ul>
+                <li>適用年齡:❌</li>
+                <li>地墊材質:❌</li>
+            </ul>
+        </details>
+        <details class="info-box nearby">
+        <summary>🅿️ 周邊設施</summary>
+            <ul>
+                <li>停車場：❌</li>
+                <li>路邊停車格： ❌</li>
+                <li>無障礙坡道： ✅</li>
+                <li>公園垃圾桶： ❌</li>
+                <li>家長等候區： ✅</li>
+                <li>便利資源： 7-11</li>
+            </ul>
+        </details>
+
+        <details class="info-box review">
+        <summary>📢 家長評論</summary>
+            <ul>
+                <li></li>
+            </ul>
+        </details>
+        `;
+    }
+    else if (locationId === 'park14') {
+        content = `
+        <h1>福興公園</h1>
+        <p>302新竹縣竹北市</p>
+        <details class="info-box toilet">
+            <summary>🚻 廁所與育兒設施</summary>
+            <ul>
+                <li>廁所：✅</li>
+                <li>兒童迷你馬桶：❌</li>
+                <li>固定嬰兒座椅：❌</li>
+                <li>尿布台：❌ </li>
+                <li>衛生紙：❌</li>
+                <li>衛生紙販賣機：❌</li>
+                <li>哺乳室：❌</li>
+            </ul>
+        </details>
+        <details class="info-box playground">
+            <summary>🎠 遊樂設施</summary>
+            <ul>
+                <li>適用年齡:3~12歲</li>
+                <li>地墊材質:鬆填式鋪面: 礫石</li>
+            </ul>
+        </details>
+        <details class="info-box nearby">
+        <summary>🅿️ 周邊設施</summary>
+            <ul>
+                <li>停車場：❌</li>
+                <li>路邊停車格： ✅</li>
+                <li>無障礙坡道： ✅</li>
+                <li>公園垃圾桶： ❌</li>
+                <li>家長等候區： ✅</li>
+                <li>便利資源： 7-11</li>
+            </ul>
+        </details>
+
+        <details class="info-box review">
+        <summary>📢 家長評論</summary>
+            <ul>
+                <li></li>
+            </ul>
+        </details>
+        `;
+    }
+    else if (locationId === 'park15') {
+        content = `
+        <h1>公29公園</h1>
+        <p>302新竹縣竹北市博愛南路</p>
+        <details class="info-box toilet">
+            <summary>🚻 廁所與育兒設施</summary>
+            <ul>
+                <li>廁所：✅</li>
+                <li>兒童迷你馬桶：❌</li>
+                <li>固定嬰兒座椅：❌</li>
+                <li>尿布台：❌ </li>
+                <li>衛生紙：❌</li>
+                <li>衛生紙販賣機：❌</li>
+                <li>哺乳室：❌</li>
+            </ul>
+        </details>
+        <details class="info-box playground">
+            <summary>🎠 遊樂設施</summary>
+            <ul>
+                <li>適用年齡:6~12歲</li>
+                <li>地墊材質:鬆填式鋪面: 礫石</li>
+            </ul>
+        </details>
+        <details class="info-box nearby">
+        <summary>🅿️ 周邊設施</summary>
+            <ul>
+                <li>停車場：✅</li>
+                <li>路邊停車格： ✅</li>
+                <li>無障礙坡道： ✅</li>
+                <li>公園垃圾桶： ✅</li>
+                <li>家長等候區： ✅</li>
+                <li>便利資源： 7-11/全家</li>
+            </ul>
+        </details>
+
+        <details class="info-box review">
+        <summary>📢 家長評論</summary>
+            <ul>
+                <li>滑板區12歲以下需家長陪同</li>
+            </ul>
+        </details>
+        `;
+    }
+    else if (locationId === 'park16') {
+        content = `
+        <h1>新崙公園</h1>
+        <p>302新竹縣竹北市</p>
+        <details class="info-box toilet">
+            <summary>🚻 廁所與育兒設施</summary>
+            <ul>
+                <li>廁所：✅</li>
+                <li>兒童迷你馬桶：❌</li>
+                <li>固定嬰兒座椅：❌</li>
+                <li>尿布台：❌ </li>
+                <li>衛生紙：❌</li>
+                <li>衛生紙販賣機：✅</li>
+                <li>哺乳室：❌</li>
+            </ul>
+        </details>
+        <details class="info-box playground">
+            <summary>🎠 遊樂設施</summary>
+            <ul>
+                <li>適用年齡:2~12歲</li>
+                <li>地墊材質:單體鋪面: 單片式橡膠地墊
+                            單體鋪面: 澆注式橡膠地墊
+                            鬆填式舖面: 木片 </li>
+            </ul>
+        </details>
+        <details class="info-box nearby">
+        <summary>🅿️ 周邊設施</summary>
+            <ul>
+                <li>停車場：✅</li>
+                <li>路邊停車格： ✅</li>
+                <li>無障礙坡道： ✅</li>
+                <li>公園垃圾桶： ✅</li>
+                <li>家長等候區： ✅</li>
+                <li>便利資源： 7-11/萊爾富</li>
+            </ul>
+        </details>
+
+        <details class="info-box review">
+        <summary>📢 家長評論</summary>
+            <ul>
+                <li>廁所外有飲水機</li>
+            </ul>
+        </details>
+        `;
+    }
+    else if (locationId === 'park17') {
+        content = `
+        <h1>兒八公園</h1>
+        <p>302新竹縣竹北市新民街96號</p>
+        <details class="info-box toilet">
+            <summary>🚻 廁所與育兒設施</summary>
+            <ul>
+                <li>廁所：✅</li>
+                <li>兒童迷你馬桶：❌</li>
+                <li>固定嬰兒座椅：❌</li>
+                <li>尿布台：❌ </li>
+                <li>衛生紙：❌</li>
+                <li>衛生紙販賣機：❌</li>
+                <li>哺乳室：❌</li>
+            </ul>
+        </details>
+        <details class="info-box playground">
+            <summary>🎠 遊樂設施</summary>
+            <ul>
+                <li>適用年齡:2~12歲</li>
+                <li>地墊材質:單體鋪面: 單片式橡膠地墊</li>
+            </ul>
+        </details>
+        <details class="info-box nearby">
+        <summary>🅿️ 周邊設施</summary>
+            <ul>
+                <li>停車場：✅</li>
+                <li>路邊停車格： ❌</li>
+                <li>無障礙坡道： ❌</li>
+                <li>公園垃圾桶： ✅</li>
+                <li>家長等候區： ✅</li>
+                <li>便利資源： 全家/萊爾富</li>
+            </ul>
+        </details>
+
+        <details class="info-box review">
+        <summary>📢 家長評論</summary>
+            <ul>
+                <li></li>
             </ul>
         </details>
         `;
