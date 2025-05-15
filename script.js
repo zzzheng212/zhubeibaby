@@ -133,109 +133,86 @@ function initMap() {
     var infoWindows = {};
     var openInfoWindows = [];
 
-    locations.forEach(function (location) {
-        if (location.subLocations) {
-            markers[location.id] = [];
-            infoWindows[location.id] = [];
-            location.subLocations.forEach(function (subLocation) {
-                var marker = new google.maps.Marker({
-                    position: subLocation,
-                    map: map,
-                    title: location.title + ' ' + subLocation.title,
-                    visible: false
-                });
-
-                var infoWindow = new google.maps.InfoWindow({
-                    content: `<div class="info-window-link" data-park="${location.id}" style="cursor:pointer; color:blue; text-decoration:underline;">${location.title}</div>`
-                  });
-                marker.addListener('click', function () {
-                    closeAllInfoWindows();
-                    infoWindow.open(map, marker);
-                    openInfoWindows.push(infoWindow);
-                });
-
-                markers[location.id].push(marker);
-                infoWindows[location.id].push(infoWindow);
-            });
-        } else {
-            var marker = new google.maps.Marker({
-                position: location.coords,
-                map: map,
-                title: location.title,
-                visible: false
-            });
-
-            var infoWindow = new google.maps.InfoWindow({
-                content: location.title
-            });
-
-            marker.addListener('click', function () {
-                closeAllInfoWindows();
-                infoWindow.open(map, marker);
-                openInfoWindows.push(infoWindow);
-            });
-
-            markers[location.id] = [marker];
-            infoWindows[location.id] = [infoWindow];
-        }
-
-    });
-
-    let allBounds = new google.maps.LatLngBounds();
-
-        for (let key in markers) {
-            markers[key].forEach(function (marker, index) {
-                marker.setVisible(true); // 顯示地標
-
-            // 開啟對應的 infoWindow
-            // infoWindows[key][index].open(map, marker);
-            // openInfoWindows.push(infoWindows[key][index]);
-
-            // 加入地圖邊界以自動縮放
-            allBounds.extend(marker.getPosition());
-            });
-        }
-
-    map.fitBounds(allBounds);
-    document.addEventListener('click', function (e) {
-        if (e.target.classList.contains('info-window-link')) {
+    locations.forEach(location => {
+        markers[location.id] = [];
+        infoWindows[location.id] = [];
+    
+        location.subLocations.forEach(subLocation => {
+          const marker = new google.maps.Marker({
+            position: subLocation,
+            map: map,
+            title: location.title,
+            visible: true
+          });
+    
+          const infoWindow = new google.maps.InfoWindow({
+            content: `<div class="info-window-link" data-park="${location.id}" style="cursor:pointer; color:blue; text-decoration:underline;">
+                        ${location.title}
+                      </div>`
+          });
+    
+          marker.addListener('click', () => {
+            closeAllInfoWindows();
+            infoWindow.open(map, marker);
+            openInfoWindows.push(infoWindow);
+            updateInfoContainer(location.id);
+          });
+    
+          markers[location.id].push(marker);
+          infoWindows[location.id].push(infoWindow);
+        });
+      });
+    
+      // 初始顯示所有地標，但不開 InfoWindow
+      let allBounds = new google.maps.LatLngBounds();
+      for (let key in markers) {
+        markers[key].forEach(marker => {
+          marker.setVisible(true);
+          allBounds.extend(marker.getPosition());
+        });
+      }
+      map.fitBounds(allBounds);
+    
+      // 點 sidebar or infoWindow 名稱觸發（共用 .park-item 與 .info-window-link）
+      document.addEventListener('click', function (e) {
+        if (e.target.classList.contains('park-item') || e.target.classList.contains('info-window-link')) {
+          e.preventDefault();
           const parkId = e.target.dataset.park;
           showMarkers(parkId);
           updateInfoContainer(parkId);
         }
       });
-    function showMarkers(locationId) {
+    
+      function showMarkers(locationId) {
         closeAllInfoWindows();
-
-        // 隱藏所有標記
-        for (var key in markers) {
-            markers[key].forEach(function (marker) {
-                marker.setVisible(false);
-            });
+    
+        // 隱藏所有 marker
+        for (let key in markers) {
+          markers[key].forEach(marker => marker.setVisible(false));
         }
-
-        // 顯示選中地標的標記並打開對應的信息窗口
-        var bounds = new google.maps.LatLngBounds();
-        markers[locationId].forEach(function (marker, index) {
-            marker.setVisible(true);
-            infoWindows[locationId][index].open(map, marker);
-            openInfoWindows.push(infoWindows[locationId][index]);
-            bounds.extend(marker.getPosition());
+    
+        const bounds = new google.maps.LatLngBounds();
+        markers[locationId].forEach((marker, index) => {
+          marker.setVisible(true);
+          infoWindows[locationId][index].open(map, marker);
+          openInfoWindows.push(infoWindows[locationId][index]);
+          bounds.extend(marker.getPosition());
         });
+    
         map.fitBounds(bounds);
-        var listener = google.maps.event.addListenerOnce(map, "bounds_changed", function () {
-            if (map.getZoom() > 16) {
-                map.setZoom(16);
-            }
+        google.maps.event.addListenerOnce(map, 'bounds_changed', () => {
+          if (map.getZoom() > 16) {
+            map.setZoom(16);
+          }
         });
-    }
-
-    function closeAllInfoWindows() {
+      }
+    
+      function closeAllInfoWindows() {
         while (openInfoWindows.length) {
-            openInfoWindows.pop().close();
+          openInfoWindows.pop().close();
         }
+      }
     }
-}
 
 
 function smoothPanAndZoom(map, destination, zoomLevel) {
@@ -1041,4 +1018,5 @@ document.addEventListener("DOMContentLoaded", function () {
         main.classList.toggle('shrink');
     });
 });
+
 
