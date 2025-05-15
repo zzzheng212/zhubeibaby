@@ -146,9 +146,8 @@ function initMap() {
                 });
 
                 var infoWindow = new google.maps.InfoWindow({
-                    content: location.title + ' ' + subLocation.title
-                });
-
+                    content: `<div class="info-window-link" data-park="${location.id}" style="cursor:pointer; color:blue; text-decoration:underline;">${location.title}</div>`
+                  });
                 marker.addListener('click', function () {
                     closeAllInfoWindows();
                     infoWindow.open(map, marker);
@@ -191,6 +190,29 @@ function initMap() {
         });
     });
 
+    let allBounds = new google.maps.LatLngBounds();
+
+        for (let key in markers) {
+            markers[key].forEach(function (marker, index) {
+                marker.setVisible(true); // 顯示地標
+
+            // 開啟對應的 infoWindow
+            infoWindows[key][index].open(map, marker);
+            openInfoWindows.push(infoWindows[key][index]);
+
+            // 加入地圖邊界以自動縮放
+            allBounds.extend(marker.getPosition());
+            });
+        }
+
+    map.fitBounds(allBounds);
+    document.addEventListener('click', function (e) {
+        if (e.target.classList.contains('info-window-link')) {
+          const parkId = e.target.dataset.park;
+          showMarkers(parkId);
+          updateInfoContainer(parkId);
+        }
+      });
     function showMarkers(locationId) {
         closeAllInfoWindows();
 
@@ -1028,7 +1050,4 @@ document.addEventListener("DOMContentLoaded", function () {
         main.classList.toggle('shrink');
     });
 });
-
-
-
 
