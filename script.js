@@ -179,15 +179,6 @@ function initMap() {
             infoWindows[location.id] = [infoWindow];
         }
 
-        // Listen for clicks on the menu items
-        document.querySelectorAll('.park-item').forEach(function (el) {
-            el.addEventListener('click', function (e) {
-                e.preventDefault();
-                const locationId = this.dataset.park;  // 抓 data-park 的值
-                showMarkers(locationId);
-                updateInfoContainer(locationId);
-            });
-        });
     });
 
     let allBounds = new google.maps.LatLngBounds();
@@ -197,8 +188,8 @@ function initMap() {
                 marker.setVisible(true); // 顯示地標
 
             // 開啟對應的 infoWindow
-            infoWindows[key][index].open(map, marker);
-            openInfoWindows.push(infoWindows[key][index]);
+            // infoWindows[key][index].open(map, marker);
+            // openInfoWindows.push(infoWindows[key][index]);
 
             // 加入地圖邊界以自動縮放
             allBounds.extend(marker.getPosition());
