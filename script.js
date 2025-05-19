@@ -247,7 +247,7 @@ function updateInfoContainer(locationId) {
 
     if (locationId === 'park1') {
         content = `
-        <h1>兒11親子公園(音符公園)</h1>
+        <h1>音符公園(兒11)</h1>
         <p>302新竹縣竹北市隘口三街239號</p>
         <details class="info-box toilet">
             <summary>🚻 廁所與育兒設施</summary>
@@ -272,10 +272,10 @@ function updateInfoContainer(locationId) {
         <summary>🅿️ 周邊設施</summary>
             <ul>
                 <li>停車場：✅</li>
-                <li>無障礙坡道：❌</li>
-                <li>急救設施:✅</li>
-                <li>飲水機：❌</li>
-                <li>垃圾桶分類：❌</li>
+                <li>路邊停車格：❌</li>
+                <li>無障礙坡道：✅</li>
+                <li>公園垃圾桶：❌</li>
+                <li>家長等候區：❌</li>
                 <li>便利資源: 7-11</li>
             </ul>
         </details>
@@ -314,10 +314,10 @@ function updateInfoContainer(locationId) {
         <summary>🅿️ 周邊設施</summary>
             <ul>
                 <li>停車場：❌</li>
+                <li>路邊停車格：✅</li>
                 <li>無障礙坡道：✅</li>
-                <li>急救設施:✅</li>
-                <li>飲水機：❌</li>
-                <li>垃圾桶分類：✅</li>
+                <li>公園垃圾桶：❌</li>
+                <li>家長等候區：✅</li>
                 <li>便利資源: 全家</li>
             </ul>
         </details>
@@ -355,10 +355,10 @@ function updateInfoContainer(locationId) {
         <summary>🅿️ 周邊設施</summary>
             <ul>
                 <li>停車場：✅</li>
+                <li>路邊停車格：✅</li>
                 <li>無障礙坡道：✅</li>
-                <li>急救設施:✅</li>
-                <li>飲水機：❌</li>
-                <li>垃圾桶分類：✅</li>
+                <li>公園垃圾桶：❌</li>
+                <li>家長等候區：✅</li>
                 <li>便利資源: 7-11</li>
             </ul>
         </details>
@@ -399,11 +399,11 @@ function updateInfoContainer(locationId) {
         <summary>🅿️ 周邊設施</summary>
             <ul>
                 <li>停車場：✅</li>
+                <li>路邊停車格：✅</li>
                 <li>無障礙坡道：✅</li>
-                <li>急救設施:❌</li>
-                <li>飲水機：❌</li>
-                <li>垃圾桶分類：✅</li>
-                <li>便利資源：附近有超商</li>
+                <li>公園垃圾桶：✅ </li>
+                <li>家長等候區：✅</li>
+                <li>便利資源:7-11/全家/萊爾富</li>
             </ul>
         </details>
 
@@ -593,7 +593,7 @@ function updateInfoContainer(locationId) {
     }
     else if (locationId === 'park9') {
         content = `
-        <h1> 興隆公園(公24)</h1>
+        <h1>文化兒童公園(兒10)</h1>
         <p>302新竹縣竹北市</p>
         <details class="info-box toilet">
             <summary>🚻 廁所與育兒設施</summary>
