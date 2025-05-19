@@ -78,6 +78,18 @@
         height: 300px; /* 手機版地圖高度可自行調整 */
       }
     }
+    @media (max-width: 768px) {
+      .header .d-md-none {
+        justify-content: center !important;
+        text-align: center;
+      }
+
+      .header span.fw-bold {
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 
@@ -94,11 +106,8 @@
   </header>
   <!-- End 電腦版 Header -->
 
-  <header
-    class="d-flex d-md-none align-items-center justify-content-between px-3 py-2 bg-white shadow-sm">
-    <!-- 標題靠左 -->
-    <span class="fw-bold mb-0">竹北育兒友善地圖ZHUBABE</span>
-    <!-- 漢堡按鈕靠右 -->
+  <header class="d-flex d-md-none align-items-center justify-content-between px-3 py-2 bg-white shadow-sm">
+    <span class="fw-bold mb-0 text-nowrap">竹北育兒友善地圖ZHUBABE</span>
     <button class="btn p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
       <i class="bi bi-list fs-4"></i>
     </button>

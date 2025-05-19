@@ -1360,13 +1360,18 @@ h6 {
 
 
 @media (max-width: 768px) {
-  /* 手機 header 裡的標題 */
-  header.d-md-none span.fw-bold.mb-0 {
+  header.d-md-none {
+    height: 50px; /* 保持與漢堡 icon 水平高度 */
+  }
+
+  header.d-md-none span.fw-bold {
     font-family: "Nunito", sans-serif !important;
-    font-size: 26px !important;
+    font-size: 20px !important;
     font-weight: 800 !important;
     color: #012970 !important;
-    margin-bottom: 20px !important;
-    /* 如果想要置中再加：text-align: center !important; */
+    margin: 0 !important;
+    line-height: 1 !important;
+    display: flex;
+    align-items: center;
   }
 }
