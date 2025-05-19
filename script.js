@@ -380,11 +380,12 @@ function updateInfoContainer(locationId) {
         <details class="info-box toilet">
             <summary>🚻 廁所與育兒設施</summary>
             <ul>
-                <li>親子廁所：✅</li>
-                <li>尿布台：男廁、女廁、無障礙皆✅</li>
-                <li>兒童用洗手台：✅</li>
-                <li>固定與兒童座椅：✅</li>
-                <li>衛生紙提供：✅</li>
+                <li>廁所：✅</li>
+                <li>兒童迷你馬桶：✅</li>
+                <li>固定嬰兒座椅：✅</li>
+                <li>尿布台：✅ </li>
+                <li>衛生紙：❌</li>
+                <li>衛生紙販賣機：✅</li>
                 <li>哺乳室：❌</li>
             </ul>
         </details>
